@@ -61,3 +61,4 @@ def inicio_sesion(request):
 def cerrar_sesion(request):
     logout(request)
     return redirect('iniciosesion')
+
