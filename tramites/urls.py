@@ -22,4 +22,5 @@ urlpatterns = [
     path('inicio/', views.inicio, name='inicio'),
     path('sesion/', include('sesion.urls')),
     path('', views.inicio_sesion, name='iniciosesion'),
+    path('trabajadores/', include('trabajador.urls'))
 ]

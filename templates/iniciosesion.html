@@ -5,6 +5,8 @@ inicio sesion
 {% endblock titulo %}
 {% load crispy_forms_tags %}
 {% block cuerpo %}
+<div class="col-6">
+
 <h1 class="text-center mt-3">Iniciar Sesion</h1>
 <form action="" method="POST">
     {% csrf_token %}
@@ -14,4 +16,5 @@ inicio sesion
     </center>
 
 </form>
+</div>
 {% endblock cuerpo %}

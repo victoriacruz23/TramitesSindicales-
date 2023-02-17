@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Trabajador
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block cuerpo %}
+<body style="background: #DCDCDC;">
+    <h1>ELIMINACIÓN DE TRABAJADORES</h1>
+    <form action="" method="POST">
+    {{form|crispy}}  
+    </form>
+</body>
+{% endblock cuerpo %}

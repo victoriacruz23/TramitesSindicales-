@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Trabajador
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block cuerpo %}
+
+<body style="background: #DCDCDC;">
+    <h1 class="text-center">CONSULTA DE TRABAJADORES</h1>
+    <div class="col-12" style="margin-top:1%;">
+        <div class="table-responsive bg-white shadow-lg rounded p-3" style="height: 400px;">
+        <table id="example" class="table table-striped table-hover" style="width:100%" >
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Nº</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Edad</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Fecha de Nacimiento</th>
+                    <th scope="col">Fecha de contrato</th>
+                    <th scope="col">Fecha de finalizacion</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody class="table-primary">
+                {% for dato in datos %}
+                        <tr>
+                            <th scope="row">{{dato.id}}</th>
+                            <td>{{dato.nombre}}</td>
+                            <td>{{ dato.apellidos}}</td>
+                            <td>{{ dato.correo}}</td>
+                            <td>{{ dato.edad}}</td>
+                            {% if dato.estado_civil == True %}
+                            <td>
+                            <a class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-through-heart-fill" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M2.854 15.854A.5.5 0 0 1 2 15.5V14H.5a.5.5 0 0 1-.354-.854l1.5-1.5A.5.5 0 0 1 2 11.5h1.793l3.103-3.104a.5.5 0 1 1 .708.708L4.5 12.207V14a.5.5 0 0 1-.146.354l-1.5 1.5ZM16 3.5a.5.5 0 0 1-.854.354L14 2.707l-1.006 1.006c.236.248.44.531.6.845.562 1.096.585 2.517-.213 4.092-.793 1.563-2.395 3.288-5.105 5.08L8 13.912l-.276-.182A23.825 23.825 0 0 1 5.8 12.323L8.31 9.81a1.5 1.5 0 0 0-2.122-2.122L3.657 10.22a8.827 8.827 0 0 1-1.039-1.57c-.798-1.576-.775-2.997-.213-4.093C3.426 2.565 6.18 1.809 8 3.233c1.25-.98 2.944-.928 4.212-.152L13.292 2 12.147.854A.5.5 0 0 1 12.5 0h3a.5.5 0 0 1 .5.5v3Z"/>
+                              </svg></a>
+                              </td>
+                            {% else %}
+                            <td>
+                            <a class="text-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heartbreak" viewBox="0 0 16 16">
+                                <path d="M8.867 14.41c13.308-9.322 4.79-16.563.064-13.824L7 3l1.5 4-2 3L8 15a38.094 38.094 0 0 0 .867-.59Zm-.303-1.01-.971-3.237 1.74-2.608a1 1 0 0 0 .103-.906l-1.3-3.468 1.45-1.813c1.861-.948 4.446.002 5.197 2.11.691 1.94-.055 5.521-6.219 9.922Zm-1.25 1.137a36.027 36.027 0 0 1-1.522-1.116C-5.077 4.97 1.842-1.472 6.454.293c.314.12.618.279.904.477L5.5 3 7 7l-1.5 3 1.815 4.537Zm-2.3-3.06-.442-1.106a1 1 0 0 1 .034-.818l1.305-2.61L4.564 3.35a1 1 0 0 1 .168-.991l1.032-1.24c-1.688-.449-3.7.398-4.456 2.128-.711 1.627-.413 4.55 3.706 8.229Z"/>
+                              </svg></a>
+                            </td>
+                            {% endif %}
+                            <td>{{ dato.fecha_de_nacimiento}}</td>
+                            <td>{{ dato.fecha_contrato}}</td>
+                            <td>{{ dato.fecha_finalizacion }}</td>
+                            <td><a href="" class="text-success"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                              </svg></a></td>
+                            <td class="text-danger"><a href=""><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                                <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
+                              </svg></a></td>
+                        </tr>
+        {% endfor %}
+    
+            </tbody>
+            <tfoot class="table-dark">
+                <th scope="col">Nº</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Correo</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Fecha de Nacimiento</th>
+                <th scope="col">Fecha de contrato</th>
+                <th scope="col">Fecha de finalizacion</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tfoot>
+        </table>
+    </div>
+    </div>
+        
+</body>
+
+{% endblock cuerpo %}

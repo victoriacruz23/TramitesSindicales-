@@ -4,8 +4,8 @@ registro
 {% endblock titulo %}
 {% load crispy_forms_tags %}
 {% block cuerpo %}
+<div class="col-6">
 <h1>HOLA</h1>
-
 <form action="" method="POST">
     {% csrf_token %}
     {{ form|crispy }}
@@ -14,4 +14,5 @@ registro
     </center>
    
 </form>
+</div>
 {% endblock cuerpo %}
