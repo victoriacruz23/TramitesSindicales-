@@ -6,16 +6,17 @@ Trabajador
 {% load crispy_forms_tags %}
 {% block cuerpo %}
 
-<body style="background: #DCDCDC;">
+<body style="background: #e9e9ea">
     <div class="col-6">
-    <h1>HOLA</h1>
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{form|crispy}}
-        <center>
-            <button type="submit" class="btn btn-primary">crear</button>
-        </center>
-    </form>
+        <h1>HOLA</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form|crispy}}
+                      
+            <center>
+                <button type="submit" class="btn btn-primary">crear</button>
+            </center>
+        </form>
     </div>
 </body>
 

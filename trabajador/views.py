@@ -26,9 +26,20 @@ def consulta(request):
     return render(request, 'consulta.html', {'datos': dato})
 
 
-def editar(request):
-    form = FormTrabajador()
-    return render(request, 'editar.html', {'form': form})
+def editar(request, editar):
+    trabajador_editar = get_object_or_404(Trabajador, pk=editar)
+    if request.method == "GET":
+        form = FormTrabajador(instance=trabajador_editar)
+        
+    else:
+        form = FormTrabajador(request.POST, instance=trabajador_editar)
+        if form.is_valid():
+            form.save()
+            return redirect('consultatrabajador')
+        else:
+            form = FormTrabajador(request.POST, instance=trabajador_editar)
+
+    return render(request, 'editar.html', {'editar': form})
 
 
 def eliminar(request, eliminacion):
