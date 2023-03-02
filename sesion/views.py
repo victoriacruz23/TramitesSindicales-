@@ -2,8 +2,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
+from trabajador.models import *
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -16,6 +18,14 @@ def hola(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             usuariosesion = form.save()
+            contulataUser = User.objects.latest('id')
+            idUser= contulataUser.id
+            infUser = User.objects.get(pk=idUser)
+            infTipo = Rol.objects.get(pk=2)
+            instperfil = Persona()
+            instperfil.usuario = infUser
+            instperfil.tipo_rol = infTipo
+            instperfil.save()
             login(request, usuariosesion)
             return redirect('inicio')
         else:
@@ -27,7 +37,6 @@ def hola(request):
 @login_required
 def inicio(request):
     return render(request, 'inicio.html')
-
 
 def inicio_sesion(request):
 
