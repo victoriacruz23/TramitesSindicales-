@@ -9,12 +9,14 @@ class Rol(models.Model):
 
 
 class Empresa(models.Model):
-    nombre = models.CharField(max_length=50)
-    razon_social = models.CharField(max_length=40)
-    direccion = models.CharField(max_length=200)
-    correro_electonico = models.CharField(max_length=200)
-    telefono = models.CharField(max_length=20)
+    nombre = models.CharField(max_length=50, verbose_name='Nombre de la Empresa')
+    razon_social = models.CharField(max_length=40, verbose_name='Razon Social')
+    direccion = models.CharField(max_length=200, verbose_name='Direccion')
+    correro_electonico = models.CharField(max_length=200, verbose_name='Correo Electronico')
+    telefono = models.CharField(max_length=20, verbose_name='Numero de telefono')
 
+    def __str__(self):
+        return f'{self.nombre}'
 
 class Persona(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -30,11 +32,11 @@ class Persona(models.Model):
     fecha_validacion = models.DateField(null=True,blank=True)
 
     def __str__(self):
-        return f'{self.tipo_rol}'
+        return f'{self.nombre}'
 
 
 class Solicitud(models.Model):
-    perona = models.ForeignKey(Persona, on_delete=models.CASCADE)
+    persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
     numero_contrato = models.CharField(max_length=20)
     fecha_inicio = models.DateField()

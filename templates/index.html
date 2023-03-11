@@ -4,16 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Tramites sindicales {% block titulo %} {% endblock titulo %}
-        </title>
+    <title>Tramite sindical {% block titulo %} {% endblock titulo %}
+    </title>
     <meta content="" name="description">
     <meta content="" name="keywords">
     {% load static %}
 
     <!-- Favicons -->
-    <link href=" {% static 'nice' %}/img/hola.jpg" rel="icon">
-    <link href=" {% static 'nice' %}/img/hola.jpg" rel="apple-touch-icon">
+    <link href="{% static 'nice' %}/img/hola.jpg" rel="icon">
+    <link href="{% static 'nice' %}/img/hola.jpg" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -22,16 +21,16 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href=" {% static 'nice' %}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/quill/quill.snow.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/quill/quill.bubble.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href=" {% static 'nice' %}/vendor/simple-datatables/style.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/quill/quill.snow.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/quill/quill.bubble.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/vendor/simple-datatables/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href=" {% static 'nice' %}/css/style.css" rel="stylesheet">
+    <link href="{% static 'nice' %}/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: NiceAdmin
@@ -46,19 +45,20 @@
 
     <!-- ======= Header ======= -->
     {% include 'recursos/header.html' %}
-    <!-- End Header -->
+    <!-- ======= Header ======= -->
 
     <!-- ======= Sidebar ======= -->
     {% include 'recursos/sidebar.html' %}
-    
+    <!-- End Sidebar-->
+
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>{% block titulocard %}{% endblock titulocard %}</h1>
+            <h1>Dashboard</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Trabajodr</a></li>
-                    <li class="breadcrumb-item active">Editar Perfil</li>
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -71,7 +71,7 @@
                     <div class="card">
 
                         <div class="card-body">
-                            <h5 class="card-title">{% block subtitulocard %}{% endblock subtitulocard %}</span></h5>
+                            <h5 class="card-title">Recent Activity <span>| Today</span></h5>
                           <div class="row" style="justify-content: center;">
                              {% block cuerpo %}
                               
@@ -85,7 +85,6 @@
         </section>
 
     </main><!-- End #main -->
-
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
@@ -105,17 +104,17 @@
             class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
-    <script src=" {% static 'nice' %}/vendor/apexcharts/apexcharts.min.js"></script>
-    <script src=" {% static 'nice' %}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src=" {% static 'nice' %}/vendor/chart.js/chart.umd.js"></script>
-    <script src=" {% static 'nice' %}/vendor/echarts/echarts.min.js"></script>
-    <script src=" {% static 'nice' %}/vendor/quill/quill.min.js"></script>
-    <script src=" {% static 'nice' %}/vendor/simple-datatables/simple-datatables.js"></script>
-    <script src=" {% static 'nice' %}/vendor/tinymce/tinymce.min.js"></script>
-    <script src=" {% static 'nice' %}/vendor/php-email-form/validate.js"></script>
+    <script src="{% static 'nice' %}/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="{% static 'nice' %}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'nice' %}/vendor/chart.js/chart.umd.js"></script>
+    <script src="{% static 'nice' %}/vendor/echarts/echarts.min.js"></script>
+    <script src="{% static 'nice' %}/vendor/quill/quill.min.js"></script>
+    <script src="{% static 'nice' %}/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="{% static 'nice' %}/vendor/tinymce/tinymce.min.js"></script>
+    <script src="{% static 'nice' %}/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src=" {% static 'nice' %}/js/main.js"></script>
+    <script src="{% static 'nice' %}/js/main.js"></script>
 
 </body>
 

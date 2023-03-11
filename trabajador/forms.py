@@ -1,12 +1,10 @@
 from django.forms import ModelForm, widgets,DateInput
-from trabajador.models import Trabajador
+from trabajador.models import Persona
 
 class FormTrabajador(ModelForm):
     class Meta:
-        model = Trabajador
-        fields ='__all__'
+        model = Persona
+        exclude = ['usuario', 'tipo_rol']
         widgets={ 
-            'fecha_de_nacimiento': DateInput(attrs={'type':'date'}),
-            'fecha_contrato': DateInput(attrs={'type':'date'}),
-            'fecha_finalizacion': DateInput(attrs={'type':'date'})
+            'fecha_validacion': DateInput(attrs={'type':'date'}),
         }

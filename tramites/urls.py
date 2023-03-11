@@ -20,9 +20,10 @@ from sesion import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', views.inicio, name='inicio'),
+    path('ejemplo-nombre/', views.vistasPruebas),
     path('sesion/', include('sesion.urls')),
     path('', views.inicio_sesion, name='iniciosesion'),
     path('trabajadores/', include('trabajador.urls')),
     path('administrador/', include('adminn.urls')),
-   
+     
 ]

@@ -2,18 +2,14 @@
 {% block titulo %}
 registro
 {% endblock titulo %}
+
 {% load crispy_forms_tags %}
 {% block cuerpo %}
-<div class="col-6">
-<h1>REGISTRO DE USUARIOS</h1>
-<form action="" method="POST">
+<form action="" method="post">
     {% csrf_token %}
-    {{ form|crispy }}
+    {{formSolicitud|crispy}}
     <center>
-        <button type="submit" class="btn btn-primary">entrar</button>
+        <button class="btn btn-primary">Registro</button>
     </center>
 </form>
-</div>
-
-
 {% endblock cuerpo %}

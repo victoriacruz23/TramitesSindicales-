@@ -1,12 +1,40 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags %}
 {% block cuerpo %}
+<form action="" method="post">
+    {% csrf_token %}
+    <div class="row" style="margin-bottom: 3%;">
+        <div class="col">
+            <div class="form-outline">
+                {{formempresa.nombre|as_crispy_field}}
 
-            <form action="" method="post">
-                {% csrf_token %}
-                {{formempresa|crispy}}
-                <center>
-                    <button class="btn btn-primary">Registro</button>
-                </center>
-            </form>
-        {% endblock cuerpo %}
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-outline">
+                {{formempresa.razon_social|as_crispy_field}}
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline" style="margin-bottom: 3%;">
+         {{formempresa.direccion|as_crispy_field}}
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline" style="margin-bottom: 3%;">
+         {{formempresa.correro_electonico|as_crispy_field}}
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline" style="margin-bottom: 3%;">
+         {{formempresa.telefono|as_crispy_field}}
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Registrar</button>
+</form>
+
+{% endblock cuerpo %}
