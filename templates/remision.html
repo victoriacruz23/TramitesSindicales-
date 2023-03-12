@@ -1,3 +1,11 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+empresas
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block cuerpo %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,36 +20,32 @@
     <title>Tramite de remision</title>
 </head>
 <body>
-    <div class="container-fluid px-1 py-5 mx-auto">
+    <div class="container-fluid mx-auto">
         <div class="row d-flex justify-content-center">
-            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+            <div class="col-xl-10 col-lg-8 col-md-9 col-11 text-center">
                 <h3>Tramitar mi remision</h3>
                 <p class="blue-text">Rellenar los siguientes campos<br>para la realizacion de su remision</p>
                 <div class="card">
                     <form class="form-card">
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder="Introduzaca su nombre"> </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Apellidos paterno y materno<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder="Introduzca sus apellidos"> </div>
-                        </div>
-                        <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Empresa en la que colabora<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder=""> </div>
                             <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Puesto de trabajo<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder=""> </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">CURP<span class="text-danger"> *</span></label> <input type="number" id="" name="" placeholder="" > </div>
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Ultima fecha de contrato<span class="text-danger"> *</span></label> <input type="date" id="" name="" > </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Nombre<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder="Introduzaca su nombre"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Apellidos paterno y materno<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder="Introduzca sus apellidos"> </div>
                         </div>
                         <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Numero de colaborador<span class="text-danger"> *</span></label> <input type="number" id="" name="" placeholder=""> 
-                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Numero de colaborador<span class="text-danger"> *</span></label> <input type="text" id="" name="" placeholder="Introduzaca su numero de colaborador"> </div>
+                            <div class="form-group col-sm-6 flex-column d-flex"> <label class="form-control-label px-3">Ultima fecha de contrato<span class="text-danger"> *</span></label> <input type="date" id="" name="" placeholder="Introduzca sus apellidos"> </div>
+                        </div>
+                        
                         <h1 style="font-size: 15px;">Subir su firma escaneada</h1>
                         <span class="fileinput-button">
                             <span> Subir </span>
                             <input type="file">
-                
-
-                        <div class="row justify-content-end">
-                            <div class="form-group col-sm-6"> <button type="button" class="btn btn-primary">Tramitar</button></div>
+                        <div class="row justify-content-end justify-content-center">
+                            <div class="form-group col-sm-6"> <button type="button" class="btn btn-primary">Crear remision</button></div>
                         </div>
                     </form>
                 </div>
@@ -52,3 +56,4 @@
 </body>
 
 </html>
+{% endblock cuerpo %}

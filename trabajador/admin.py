@@ -8,5 +8,6 @@ admin.site.register(Persona)
 admin.site.register(Solicitud)
 admin.site.register(Tramite)
 admin.site.register(Seguimiento)
+admin.site.register(Credencial)
 
 

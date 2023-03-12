@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
@@ -51,7 +51,6 @@ def inicio(request):
 
 @user_passes_test(no_autenticado, login_url='/trabajadores/create')
 def inicio_sesion(request):
-
     if request.method == "GET":
         form = AuthenticationForm
     else:
@@ -66,6 +65,9 @@ def inicio_sesion(request):
             if user is not None:
                 # datos necesarios para el login
                 login(request, user)
+                datosPersona = Persona.objects.get(usuario=user.id)
+                user.perfil = datosPersona
+                # return HttpResponse(datosPersona.fecha_nacimiento)
                 messages.success(
                     request, f"Bienvenido al sistema {nombre_usuario}")
                 return redirect("inicio")

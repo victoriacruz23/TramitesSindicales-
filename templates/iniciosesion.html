@@ -1,20 +1,30 @@
 {% extends 'base.html' %}
-
 {% block titulo %}
 inicio sesion
 {% endblock titulo %}
 {% load crispy_forms_tags %}
+
+{% block migaspan %}
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a>Inicio Sesion /</a></li>
+    </ol>
+</nav>
+{% endblock migaspan %}
+
+{% block subtitulocard %}
+Iniciar Sesion
+{% endblock subtitulocard %}
+
 {% block cuerpo %}
 <div class="col-6">
-
-<h1 class="text-center mt-3">Iniciar Sesion</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <center>
-        <button type="submit" class="btn btn-primary mt-3">entrar</button>
-    </center>
-
-</form>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <center>
+            <button type="submit" class="btn btn-primary mt-3">Iniciar sesion</button>
+        </center>
+    
+    </form>
 </div>
 {% endblock cuerpo %}

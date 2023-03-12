@@ -21,6 +21,7 @@ class Empresa(models.Model):
 class Persona(models.Model):
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)
     tipo_rol = models.ForeignKey(Rol, on_delete=models.PROTECT)
+    avatar = models.ImageField(upload_to='avatar/%Y/%m/%d',null=True,blank=True)
     nombre = models.CharField(max_length=50,null=True,blank=True)
     apellido = models.CharField(max_length=50,null=True,blank=True)
     fecha_nacimiento = models.DateField(null=True,blank=True)
@@ -38,10 +39,17 @@ class Persona(models.Model):
 class Solicitud(models.Model):
     persona = models.ForeignKey(Persona, on_delete=models.CASCADE)
     empresa = models.ForeignKey(Empresa, on_delete=models.CASCADE)
+    cargo = models.CharField(max_length=50,null=True,blank=True)
     numero_contrato = models.CharField(max_length=20)
     fecha_inicio = models.DateField()
     fecha_expiracion = models.DateField()
 
+
+class Credencial(models.Model):
+    solicitud = models.OneToOneField(Solicitud,on_delete=models.CASCADE)
+    actanacimiento = models.FileField(upload_to='actanacimiento/%Y/%m/%d',null=True,blank=True, verbose_name='Acta de Nacimineto')
+    fotopersona = models.ImageField(upload_to='fotopersona/%Y/%m/%d',null=True,blank=True, verbose_name='Foto Personal')
+    firma = models.FileField(upload_to='firma/%Y/%m/%d',null=True,blank=True, verbose_name='Foto firma')
 
 class Tramite(models.Model):
     nombre = models.CharField(max_length=50)
