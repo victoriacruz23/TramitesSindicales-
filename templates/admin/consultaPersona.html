@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Usuarios
+{% endblock titulo %}
+<!-- titulo superior -->
+{% block titulocard %}
+Consulta Usuarios
+{% endblock titulocard %}
+<!-- titulo superior -->
+<!-- titulo inferior -->
+{% block subtitulocard %}
+Datos generales de los usuarios
+{% endblock subtitulocard %}
+<!-- titulo inferior -->
+<!-- cuerpo -->
+{% block cuerpo %}
+
+<table id="example" class="table table-striped table-hover" style="width:100%">
+    <thead class="table-dark">
+        <tr>
+            <th>User name</th>
+            <th>Nombre</th>
+            <th>Apelledos</th>
+            <th>Fecha de nacimiento</th>
+            <th>Telefono</th>
+            <th>Numero de colavorador</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dato in datos  %}
+        <tr>
+            {% if dato.usuario.id == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.usuario.username}}</td>
+            {% endif %}
+            <!-- <============ fin if =========== -->
+            {% if dato.nombre == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.nombre}}</td>
+            {% endif %}
+            <!-- <============ fin if =========== -->
+            {% if dato.apellido == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.apellido}}</td>
+            {% endif %}
+            <!-- <============ fin if =========== -->
+            {% if dato.fecha_nacimiento == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.fecha_nacimiento}}</td>
+            {% endif %}
+            <!-- <============ fin if =========== -->
+            {% if dato.numero_telefono == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.numero_telefono}}</td>
+            {% endif %}
+            <!-- <============ fin if ===========    -->
+            {% if dato.numero_colaborador == None %}
+            <td>Sin validar</td>
+            {% else %}
+            <td>{{dato.numero_colaborador}}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+
+    </tbody>
+    <tfoot class="table-dark">
+        <tr>
+            <th>User name</th>
+            <th>Nombre </th>
+            <th>Apelledos</th>
+            <th>Fecha de nacimiento</th>
+            <th>Telefono</th>
+            <th>Numero de colavorador</th>
+        </tr>
+    </tfoot>
+</table>
+{% endblock cuerpo %}
+<!-- cuerpo -->

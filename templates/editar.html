@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Trabajador
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block cuerpo %}
+<div class="col-6">
+      <h1 class="text-center">EDICIÓN DE TRABAJADORES</h1>
+      <form action="" method="POST">
+        {% csrf_token %}
+        {{ editar|crispy }}
+        <center>
+            <button type="submit" class="btn btn-primary">entrar</button>
+        </center>
+       
+    </form>
+
+</div>
+
+{% endblock cuerpo %}

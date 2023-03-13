@@ -1,0 +1,24 @@
+<!-- admin -->
+    <nav>
+        <ol class="breadcrumb">
+            {% if  request.resolver_match.url_name == 'consultaempresa' %}          
+            <li class="breadcrumb-item">Administrador</li>
+            <li class="breadcrumb-item">Empresa</li>
+            <li class="breadcrumb-item"><a class="text-danger active" href="{% url 'consultaempresa' %}">Consulta</a></li>
+            {% elif request.resolver_match.url_name == 'createempresa'  %}         
+            <li class="breadcrumb-item">Administrador</li>
+            <li class="breadcrumb-item">Empresa</li>
+            <li class="breadcrumb-item"><a class="text-danger active" href="{% url 'createempresa' %}">Crear</a></li>
+            {% elif request.resolver_match.url_name == 'consultatrabajador'  %}         
+            <li class="breadcrumb-item">Administrador</li>
+            <li class="breadcrumb-item">Trabajadores</li>
+            <li class="breadcrumb-item"><a class="text-danger active" href="{% url 'consultatrabajador' %}">Consulta</a></li>
+            {% elif request.resolver_match.url_name == 'createtrabajador'  %}         
+            <li class="breadcrumb-item">Administrador</li>
+            <li class="breadcrumb-item">Trabajadores</li>
+            <li class="breadcrumb-item"><a class="text-danger active" href="{% url 'createtrabajador' %}">Crear</a></li>
+            {% endif %}
+            
+        </ol>
+    </nav>
+<!-- admin -->

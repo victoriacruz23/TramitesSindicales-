@@ -1,0 +1,83 @@
+<aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'iniciotrabajdor' %}">
+                <i class="bi bi-grid"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+        <!-- tabajador menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#trabajador-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-person-heart"></i><span>Trabajadores</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="trabajador-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'createtrabajador' %}">
+                        <i class="bi bi-circle"></i><span>Crear Trabajador</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'consultatrabajador' %}">
+                        <i class="bi bi-circle"></i><span>Consulta Trabajador</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- tabajador menu -->
+        <!-- Empresa menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#empresa-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-hospital"></i><span>Empresa</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="empresa-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'createempresa' %}">
+                        <i class="bi bi-circle"></i><span>Crear Empresa</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'consultaempresa' %}">
+                        <i class="bi bi-circle"></i><span>Consultar Empresa</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" data-bs-target="#tramites-nav" data-bs-toggle="collapse" href="#">
+                <i class="bi bi-menu-button-wide"></i><span>Tramites</span><i class="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="tramites-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+                <li>
+                    <a href="{% url 'remision' %}">
+                        <i class="bi bi-circle"></i><span>Solicitud de remisión</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'credencial' %}">
+                        <i class="bi bi-circle"></i><span>Solicitud de credencial</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'pago' %}">
+                        <i class="bi bi-circle"></i><span>Pagos mensuales del Sindicato</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <!-- Empresa menu -->
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{% url 'iniciosesion' %}">
+                <i class="bi bi-door-open"></i><span>Iniciar Sesion</span>
+            </a>
+        </li>
+
+        {% endif %}
+
+        <!-- End Components Nav -->
+
+</aside>

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+empresas
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+{% block cuerpo %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea Tu credencial</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+<body style="background: #e5e5e5;">
+    <div class="container mt-5 px-5">
+        <div class="row g-4" style="justify-content: center;">
+            <div class="col-lg-6 col-md-6 col-xl-6">
+                <div class="bg-light rounded h-100 p-4">
+                    <div class="grid text-justific" style="--bs-columns: 10; --bs-gap: 1rem;">
+            <h2>Tramite de la credencial</h2>
+            <label for="">Sindicato de trabajadores </label>
+    <p class="card__name">Ejemplo de como debe de ser la fotografia </p>
+    <img src="https://credenciales.itipsa.com/images/widget-assets/foto-credenciales.jpg" style="width: 460px">
+    <!--<img src="https://thumbs.dreamstime.com/b/haga-frente-al-retrato-del-hombre-joven-aislado-en-blanco-104550518.jpg" style="width: 200px">-->
+
+    <div class="row mb-3">
+            <label for="">Nombre completo</label>
+        <input type="text" name="" id="name" required><samp class="barra"></samp>
+               </div>
+               <div class="row mb-3">
+                <label for="">Puesto de trabajo:</label>
+                    <input type="text" name="" id="name" required><samp class="barra"></samp>
+                </div>
+               <div class="row mb-3">
+                <label for="">Empresa en la que colabora:</label>
+                    <input type="text" name="" id="name" required><samp class="barra"></samp>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label for="">Encrese su CURP:</label>
+                    <input type="number" name="" id="number" required><samp class="barra"></samp>
+                </div>
+
+            <div  class="row mb-3">
+        <label for="formFileSm" class="form-label">Increse su acta de nacimiento</label>
+        <input class="form-control form-control-sm" id="formFileSm" name="formFileSm"
+            type="file">
+    </div>
+    <div  class="row mb-3">
+        <label for="formFileSm" class="form-label"> Subir Foto de frente, como se muestra en la imagen</label>
+        <input class="form-control form-control-sm" id="formFileSm" name="formFileSm"
+            type="file">
+            
+    </div>
+    <div  class="row mb-3">
+        <label for="formFileSm" class="form-label"> Subir firma escaneada</label>
+        <input class="form-control form-control-sm" id="formFileSm" name="formFileSm"
+            type="file">
+            
+    </div>
+            <center>
+                <button type="submit" class="btn btn-primary">subir</button>
+
+            </center>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+ </script>
+    
+</div>
+</body>
+</html>
+{% endblock cuerpo %}

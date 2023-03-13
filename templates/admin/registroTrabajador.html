@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block titulo %}
+Trabajador
+{% endblock titulo %}
+<!-- titulo superior -->
+{% block titulocard %}
+REGISTRO DE TRABAJADOR
+{% endblock titulocard %}
+<!-- titulo superior -->
+<!-- titulo inferior -->
+{% block subtitulocard %}
+Formulario para el registro de trabajador
+{% endblock subtitulocard %}
+<!-- titulo inferior -->
+{% block cuerpo %}
+<div class="col-6">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <center>
+            <button type="submit" class="btn btn-primary">entrar</button>
+        </center>
+    </form>
+</div>
+{% endblock cuerpo %}

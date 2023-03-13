@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+empresas
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+
+<!-- titulo superior -->
+{% block titulocard %}
+CONSULTA DE EMPRESAS
+{% endblock titulocard %}
+<!-- titulo superior -->
+<!-- titulo inferior -->
+{% block subtitulocard %}
+Datos generales de las empresas
+{% endblock subtitulocard %}
+<!-- titulo inferior -->
+<!-- cuerpo -->
+{% block cuerpo %}
+
+<table id="example" class="table table-striped table-hover" style="width:100%">
+    <thead class="table-dark">
+        <tr>
+            <th>Nombre empresa</th>
+            <th>Razon social</th>
+            <th>Direccion</th>
+            <th>Correo Electronico</th>
+            <th>Telefono</th>
+        </tr>
+    </thead>
+    <tbody >
+        {% for empresa in empresas  %}
+        <tr>
+            <td>{{empresa.nombre}} </td>
+            <td>{{empresa.razon_social}}</td>
+            <td>{{empresa.direccion}}</td>
+            <td>{{empresa.correro_electonico}}</td>
+            <td>{{empresa.telefono}}</td>
+        </tr>
+        {% endfor %}
+        <!-- <tr>
+            <td>Rhona Davidson</td>
+            <td>Integration Specialist</td>
+            <td>Tokyo</td>
+            <td>55</td>
+            <td>2010-10-14</td>
+        </tr> -->
+    </tbody>
+    <tfoot class="table-dark">
+        <tr>
+            <th>Nombre empresa</th>
+            <th>Razon social</th>
+            <th>Direccion</th>
+            <th>Correo Electronico</th>
+            <th>Telefono</th>
+        </tr>
+    </tfoot>
+</table>
+{% endblock cuerpo %}
+<!-- cuerpo -->

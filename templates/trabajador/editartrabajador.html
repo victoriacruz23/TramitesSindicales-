@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Trabajador
+{% endblock titulo %}
+{% load crispy_forms_tags %}
+
+{% block titulocard %}
+EDITAR DE TRABAJADORES
+{% endblock titulocard %}
+{% block subtitulocard %}
+pendiente
+{% endblock subtitulocard %}
+
+{% block cuerpo %}
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+
+    <center>
+        <button type="submit" class="btn btn-primary">editar</button>
+    </center>
+</form>
+
+{% endblock cuerpo %}
